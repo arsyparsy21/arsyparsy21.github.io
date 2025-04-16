@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday!</title>
+</head>
+<body>
+<body style="background-color: white; text-align: center;">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      animation: blink 10s infinite;
+    }
+
+    @keyframes blink {
+      0%   { background-color: white; }
+      12%  { background-color: red; }
+      24%  { background-color: orange; }
+      36%  { background-color: yellow; }
+      48% { background-color: green; }
+      60% { background-color: blue; }
+      72% { background-color: indigo; }
+      84% { background-color: violet; }
+      96% { background-color: black; }
+    }
+
+    h1 {
+      color: black;
+      text-align: center;
+      margin-top: 20vh;
+      font-size: 3em;
+      background-color: white;
+      padding: 20px;
+      display: inline-block;
+      border-radius: 10px;
+    }
+  </style>
+
+<img src="scenes/end.png" style="display: block; margin: auto;" width="80%">
+
+<button onclick="document.getElementById('bg-audio').play()">Play Audio</button>
+
+<audio id="bg-audio">
+  <source src="scenes/badapple.mp3" type="audio/mp3">
+</audio>
+
+
+</body>
+</html>
