@@ -6,8 +6,10 @@
 </head>
 <body style="background-color: black; text-align: center;">
 
-<button onclick="document.getElementById('bg-audio').play()">Play Audio</button>
-
+<button class="scary-button" onclick="let audio = document.getElementById('bg-audio'); audio.volume = 0.25; audio.play();">
+  Play Audio
+</button>
+  
 <audio id="bg-audio">
   <source src="harry.mp3" type="audio/mp3">
 </audio>
