@@ -82,26 +82,26 @@
       font-size: 14px;
       border-radius: 20px;
       border: 2px solid #4CAF50;
-      background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+      background: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
       color: white;
       cursor: pointer;
       text-transform: uppercase;
       font-weight: bold;
       transition: all 0.3s ease, box-shadow 0.4s ease;
-      box-shadow: 0 0 8px rgba(238, 174, 202, 0.4), 0 0 12px rgba(148, 187, 233, 0.3);
+      box-shadow: 0 0 8px rgba(169, 201, 255, 0.4), 0 0 12px rgba(255, 187, 236, 0.3);
     }
-
+    
     .play-button:hover {
-      background: radial-gradient(circle, rgba(221, 143, 179, 1) 0%, rgba(120, 160, 216, 1) 100%);
+      background: linear-gradient(180deg, #7faeff 0%, #ff99cc 100%);
       transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(221, 143, 179, 0.5), 0 0 16px rgba(120, 160, 216, 0.4);
+      box-shadow: 0 0 12px rgba(127, 174, 255, 0.5), 0 0 16px rgba(255, 153, 204, 0.4);
       animation: pulse 0.6s ease-out;
     }
-
+    
     .play-button:active {
       transform: scale(0.98);
     }
-
+    
     @keyframes pulse {
       0% { transform: scale(1.05); }
       50% { transform: scale(1.08); }
