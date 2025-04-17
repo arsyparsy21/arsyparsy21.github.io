@@ -9,21 +9,28 @@
       margin: 0;
       height: 100vh;
       overflow: hidden;
-      animation: blink 10s infinite;
+      animation: blink 45s infinite ease-in-out;
       text-align: center;
       font-family: sans-serif;
     }
 
     @keyframes blink {
-      12%  { background-color: red; }
-      24%  { background-color: orange; }
-      36%  { background-color: yellow; }
-      48%  { background-color: green; }
-      60%  { background-color: blue; }
-      72%  { background-color: indigo; }
-      84%  { background-color: violet; }
-      96%  { background-color: black; }
-    }
+        0%, 100% { background-color: violet; }
+        7% { background-color: indigo; }
+        14% { background-color: blue; }
+        21% { background-color: green; }
+        28% { background-color: yellow; }
+        35% { background-color: orange; }
+        42% { background-color: red; }
+        49% { background-color: pink; }
+        56% { background-color: purple; }
+        63% { background-color: turquoise; }
+        70% { background-color: cyan; }
+        77% { background-color: lime; }
+        84% { background-color: gold; }
+        91% { background-color: magenta; }
+        98% { background-color: black; }
+        }
 
     h1 {
       color: black;
