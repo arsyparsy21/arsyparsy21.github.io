@@ -77,9 +77,28 @@
 </head>
 <body>
 
+<script>
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function createConfettiPiece() {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left = `${random(0, 100)}vw`;
+    confetti.style.animationDuration = `${random(3, 6)}s`;
+    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    confetti.style.width = `${random(5, 12)}px`;
+    confetti.style.height = confetti.style.width;
+    document.body.appendChild(confetti);
+
+    setTimeout(() => confetti.remove(), 6000);
+  }
+
+  setInterval(createConfettiPiece, 100);
+</script>
 <img src="end.png" style="display: block; margin: auto;" width="50%">
 
-<!-- Marquees -->
 <marquee behavior="scroll" direction="left" scrollamount="20">
   <span class="rainbow-text" style="color: red;">HAPPY BIRTHDAY LESLEY!</span>
 </marquee>
@@ -106,28 +125,6 @@
 <audio id="bg-audio">
   <source src="badapple.mp3" type="audio/mp3">
 </audio>
-
-<!-- Confetti Script -->
-<script>
-  function random(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-
-  function createConfettiPiece() {
-    const confetti = document.createElement('div');
-    confetti.classList.add('confetti');
-    confetti.style.left = `${random(0, 100)}vw`;
-    confetti.style.animationDuration = `${random(3, 6)}s`;
-    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    confetti.style.width = `${random(5, 12)}px`;
-    confetti.style.height = confetti.style.width;
-    document.body.appendChild(confetti);
-
-    setTimeout(() => confetti.remove(), 6000);
-  }
-
-  setInterval(createConfettiPiece, 100);
-</script>
 
 </body>
 </html>
