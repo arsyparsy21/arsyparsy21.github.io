@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Happy Birthday!</title>
-</head>
-<body>
-<body style="background-color: white; text-align: center;">
-
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
   <style>
-   body {
+    body {
       margin: 0;
       height: 100vh;
       overflow: hidden;
@@ -56,10 +53,10 @@
 
     @keyframes fall {
       0% {
-        transform: translateY(-10px) rotate(0deg);
+        transform: translateY(-10px) rotate(0deg); /* Start from the top */
       }
       100% {
-        transform: translateY(110vh) rotate(360deg);
+        transform: translateY(110vh) rotate(360deg); /* Fall down past the screen */
       }
     }
 
@@ -96,8 +93,10 @@
 
   setInterval(createConfettiPiece, 100);
 </script>
+
 <img src="end.png" style="display: block; margin: auto;" width="50%">
 
+<!-- Marquees -->
 <marquee behavior="scroll" direction="left" scrollamount="20">
   <span class="rainbow-text" style="color: red;">HAPPY BIRTHDAY LESLEY!</span>
 </marquee>
@@ -117,12 +116,14 @@
   <span class="rainbow-text" style="color: violet;">HAPPY BIRTHDAY!</span>
 </marquee>
 
-
+<!-- Play Audio Button -->
 <button onclick="let audio = document.getElementById('bg-audio'); audio.volume = 0.5; audio.play();">Play Audio</button>
 
+<!-- Audio -->
 <audio id="bg-audio">
   <source src="badapple.mp3" type="audio/mp3">
 </audio>
 
 </body>
 </html>
+
