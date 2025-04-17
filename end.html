@@ -119,7 +119,7 @@
 </marquee>
 
 
-<button onclick="document.getElementById('bg-audio').play()">Play Audio</button>
+<button onclick="let audio = document.getElementById('bg-audio'); audio.volume = 0.5; audio.play();">Play Audio</button>
 
 <!-- Audio -->
 <audio id="bg-audio">
