@@ -7,10 +7,13 @@
 <body style="background-color: white; text-align: center;">
 
   <style>
-    body {
+   body {
       margin: 0;
       height: 100vh;
+      overflow: hidden;
       animation: blink 10s infinite;
+      text-align: center;
+      font-family: sans-serif;
     }
 
     @keyframes blink {
@@ -18,64 +21,114 @@
       12%  { background-color: red; }
       24%  { background-color: orange; }
       36%  { background-color: yellow; }
-      48% { background-color: green; }
-      60% { background-color: blue; }
-      72% { background-color: indigo; }
-      84% { background-color: violet; }
-      96% { background-color: black; }
+      48%  { background-color: green; }
+      60%  { background-color: blue; }
+      72%  { background-color: indigo; }
+      84%  { background-color: violet; }
+      96%  { background-color: black; }
     }
 
     h1 {
       color: black;
-      text-align: center;
       margin-top: 20vh;
       font-size: 3em;
       background-color: white;
       padding: 20px;
       display: inline-block;
       border-radius: 10px;
+      box-shadow: 0 0 10px white;
+    }
+
+    .rainbow-text {
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      animation: fall 5s linear infinite;
+      opacity: 0.8;
+      border-radius: 50%;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
+    button {
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      background: #fff;
+      cursor: pointer;
     }
   </style>
+</head>
+<body>
 
+<!-- Marquees -->
+<marquee behavior="scroll" direction="left" scrollamount="20">
+  <span class="rainbow-text" style="color: red;">HAPPY BIRTHDAY LESLEY!</span>
+</marquee>
+<marquee behavior="scroll" direction="right" scrollamount="12">
+  <span class="rainbow-text" style="color: orange;">HAPPY BIRTHDAY LESLEY!</span>
+</marquee>
+<marquee behavior="scroll" direction="left" scrollamount="50">
+  <span class="rainbow-text" style="color: yellow;">HAPPY BIRTHDAY LESLEY!</span>
+</marquee>
+<marquee behavior="scroll" direction="right" scrollamount="30">
+  <span class="rainbow-text" style="color: green;">HAPPY BIRTHDAY LESLEY!</span>
+</marquee>
+<marquee behavior="scroll" direction="left" scrollamount="10">
+  <span class="rainbow-text" style="color: blue;">HAPPY BIRTHDAY LESLEY!</span>
+</marquee>
+<marquee behavior="scroll" direction="right" scrollamount="25">
+  <span class="rainbow-text" style="color: violet;">HAPPY BIRTHDAY LESLEY!</span>
+</marquee>
+
+<!-- Image -->
 <img src="end.png" style="display: block; margin: auto;" width="50%">
 
+<!-- Audio Play Button -->
 <button onclick="document.getElementById('bg-audio').play()">Play Audio</button>
 
+<!-- Audio -->
 <audio id="bg-audio">
   <source src="badapple.mp3" type="audio/mp3">
 </audio>
 
+<!-- Confetti Script -->
+<script>
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
 
+  function createConfettiPiece() {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left = `${random(0, 100)}vw`;
+    confetti.style.animationDuration = `${random(3, 6)}s`;
+    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    confetti.style.width = `${random(5, 12)}px`;
+    confetti.style.height = confetti.style.width;
+    document.body.appendChild(confetti);
 
-  
-<marquee behavior="scroll" direction="right" scrollamount="1">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="up" scrollamount="12">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="left" scrollamount="20">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="right" scrollamount="50">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="up" scrollamount="1">HAPPY BIRTHDAY LESLEY!</marquee>
+    setTimeout(() => confetti.remove(), 6000);
+  }
 
-  
-<marquee behavior="scroll" direction="left" scrollamount="12">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="left" scrollamount="20">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="right" scrollamount="50">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="up" scrollamount="1">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="right" scrollamount="12">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="left" scrollamount="20">HAPPY BIRTHDAY LESLEY!</marquee>
-
-  
-<marquee behavior="scroll" direction="down" scrollamount="1">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="left" scrollamount="12">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="down" scrollamount="20">HAPPY BIRTHDAY LESLEY!</marquee>
-
-  
-<marquee behavior="scroll" direction="right" scrollamount="50">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="up" scrollamount="1">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="right" scrollamount="12">HAPPY BIRTHDAY LESLEY!</marquee>
-<marquee behavior="scroll" direction="left" scrollamount="20">HAPPY BIRTHDAY LESLEY!</marquee>
-
-  
-<marquee behavior="scroll" direction="right" scrollamount="50">HAPPY BIRTHDAY LESLEY!</marquee>
-
+  setInterval(createConfettiPiece, 100);
+</script>
 
 </body>
 </html>
